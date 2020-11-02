@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 var fs = require('fs');
 const { Http2ServerRequest } = require("http2");
- 
+app.set('view engine', 'ejs');  
+
  
 const port= 3000;
  
