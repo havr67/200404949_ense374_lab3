@@ -1,0 +1,37 @@
+{
+"task1":
+{   "id": 1,
+    "name": "My finished task",
+    "owner": "user1",
+    "creator": "nikita",
+    "done": 0,
+    "cleared": 1},
+"task2":
+{   "id": 2,
+    "name": "My finished task",
+    "owner": "user1",
+    "creator": "nikita",
+    "done": 1,
+    "cleared": 1},
+"task3":
+{   "id": 3,
+    "name": "My finished task",
+    "owner": "user2",
+    "creator": "nikita",
+    "done": 1,
+    "cleared": 1},
+"task4":
+{   "id": 4,
+    "name": "My finished task",
+    "owner": "user2",
+    "creator": "nikita",
+    "done": 0,
+    "cleared": 1},
+"task5":
+{   "id": 5,
+    "name": "My task",
+    "owner": "",
+    "creator": "",
+    "done": 0,
+    "cleared": 1}
+}
