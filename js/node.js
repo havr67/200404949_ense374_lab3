@@ -72,6 +72,10 @@ app.post("/register", function (req, res) {
     }); 
 }); 
 
-
+app.post("/register", dataregistrateduser.authenticate("Users", { 
+    successRedirect: "/todo", 
+    failureRedirect: "/register"
+}), function (req, res) { 
+}); 
 
 
