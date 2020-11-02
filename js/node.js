@@ -48,42 +48,30 @@ function tasklist(req, res)
     res.send(Tasks);
 } 
 
-if(Users.hasOwnProperty("username", "password")){
-    console.log("user exist");
-}else{
-    console.log("user doesn't exist");
+app.get('/login', login);
 
+function login(req, res){
+    res.send(Login);
 }
 
+app.post("/login", dataloginuser.authenticate("Users", { 
+    successRedirect: "/todo", 
+    failureRedirect: "/login"
+}), function (req, res) { 
+}); 
 
+app.post("/register", function (req, res) { 
+    var username = req.body.username 
+    var password = req.body.password 
+    User.register(new User({ username: username }), 
+            password, function (err, user) { 
+        if (err) { 
+            console.log(err); 
+            return res.render("register"); 
+        } 
+    }); 
+}); 
 
-
-Array.prototype.containsObjectwithUser = function(username, password){
-    return !this.filter(function(us){
-        return us.hasOwnProperty("username", "password") && us.username == username && us.password == password
-    }).length;
-}
-
-var xhr = new HttpRequestlogin();
-
-xhr.open("POST", '/login', true);
-
-var xhq = new HttpRequestregister();
-
-xhq.open("POST", '/register', true);
-
-
-
-
-function cheackUsers (event){
-
-    usercheck = LoginUser.Users[0].username;
-    
-    passwordcheck = LoginUser.Users[1].password;
-
-    if (usercheck != 
-
-}
 
 
 
