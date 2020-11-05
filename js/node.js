@@ -1,9 +1,12 @@
 const express = require("express");
+mongoose = require("mongoose"), 
+passport = require("passport"), 
+bodyParser = require("body-parser"), 
+LocalStrategy = require("passport-local");
 const app = express();
 var fs = require('fs');
 const { Http2ServerRequest } = require("http2");
-app.set('view engine', 'ejs');  
-
+ 
  
 const port= 3000;
  
@@ -77,6 +80,11 @@ app.post("/register", dataregistrateduser.authenticate("Users", {
     successRedirect: "/todo", 
     failureRedirect: "/register"
 }), function (req, res) { 
+}); 
+
+app.get("/logout", function (req, res) { 
+    req.logout(); 
+    res.redirect("/"); 
 }); 
 
 
