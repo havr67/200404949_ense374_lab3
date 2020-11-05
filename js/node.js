@@ -32,6 +32,17 @@ var LoginUser = JSON.parse(json/dataloginuser);
 
 var RegisterUser = JSON.parse(json/dataregistrateduser);
 
+var AddTask = JSON.parse(json/addtask);
+
+var Claim = JSON.parse(json/Claim);
+
+var Unfinish = JSON.parse(json/Unfinish);
+
+var Purge = JSON.parse(json/Purge);
+
+var AbandonorComplete = JSON.parse(json/AbandonorComplete);
+
+
 pm.enviroment.set("username", dataregistrateduser.username);
  
 console.log(Users);
@@ -88,3 +99,27 @@ app.get("/logout", function (req, res) {
 }); 
 
 
+app.get("/addtask", function (req, res) { 
+    req.addtask(); 
+    res.redirect("/todo"); 
+}); 
+
+app.get("/claim", function (req, res) { 
+    req.claim(); 
+    res.redirect("/todo"); 
+}); 
+
+app.get("/abandonorcomplete", function (req, res) { 
+    req.abandonorcomplete(); 
+    res.redirect("/todo"); 
+}); 
+
+app.get("/unfinish", function (req, res) { 
+    req.unfinish(); 
+    res.redirect("/todo"); 
+}); 
+
+app.get("/purge", function (req, res) { 
+    req.purge(); 
+    res.redirect("/todo"); 
+}); 
